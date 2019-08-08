@@ -27,6 +27,11 @@
                     <Entry  Keyboard="Numeric" Placeholder="--:--" PlaceholderColor="#CCC" FontSize="20" TextColor="#555" />
                 </StackLayout>
             </StackLayout>
+
+            <StackLayout Padding="30" VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button x:Name="BtnCancel" Text="Cancelar" TextColor="White" BorderColor="#CB9600" BackgroundColor="#EE0A0A" Clicked="cancelarEvent"/>
+                <Button x:Name="BtnCadastrar" Text="Cadastrar" TextColor="White" BorderColor="#CB9600" BackgroundColor="#34DE0D"/>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

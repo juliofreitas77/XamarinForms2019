@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1_XFDesEve.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,16 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace App1_XFDesEve
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CadastroDeEvento : ContentPage
+    public partial class InscricaoPage : ContentPage
     {
-        public CadastroDeEvento()
+        public InscricaoPage(Evento evento)
         {
             InitializeComponent();
-        }
 
-        private void cancelarEvent(Object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new ListaDeEventosAdmin());
         }
     }
 }

@@ -25,9 +25,26 @@ namespace App1_XFDesEve
         private async void BtnLogin_Clicked(object sender, EventArgs ars)
         {
             this.IsBusy = true;
-            // implementar o codigo para validação de login
-            await atraso(5000);
-            Application.Current.MainPage = new NavigationPage(new ListaDeEventosAdmin());
+
+            string matricula = matriculaEntry.Text.Trim();
+            string email = emailEntry.Text.Trim();
+            string senha = senhaEntry.Text.Trim();
+            /*Para efeito de teste: 
+             * matricula do admin: 1000
+             * email: admin@everis.com
+             * senha: 123456
+             */
+            if(matricula=="1000" && email== "admin@everis.com" && senha == "123456")
+            {
+                await atraso(5000);
+                Application.Current.MainPage = new NavigationPage(new ListaDeEventosAdmin());
+            }
+            else
+            {
+                await DisplayAlert("Erro", "Login ou senha incorretos", "Ok");
+                return;
+            }
+
         }
 
         async Task atraso(int valor)

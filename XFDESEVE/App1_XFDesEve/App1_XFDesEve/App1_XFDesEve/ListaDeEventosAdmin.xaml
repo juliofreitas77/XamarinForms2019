@@ -4,13 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mod="clr-namespace:App1_XFDesEve.Modelo"
-             x:Class="App1_XFDesEve.ListaDeEventosAdmin">
-    <NavigationPage.TitleView>
-        <StackLayout>
-            <Label Text="Eventos Everis"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
-    
+             x:Class="App1_XFDesEve.ListaDeEventosAdmin"
+             Title="Eventos Everis">
     <ContentPage.Content>
         <Grid>
             <StackLayout>
@@ -36,9 +31,6 @@
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    
-                    
-                  
                 </ListView>
             </StackLayout>
             <StackLayout Padding="30" VerticalOptions="End" HorizontalOptions="FillAndExpand">

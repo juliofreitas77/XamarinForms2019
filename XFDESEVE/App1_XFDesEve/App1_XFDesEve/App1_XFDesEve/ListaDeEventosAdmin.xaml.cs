@@ -33,11 +33,19 @@ namespace App1_XFDesEve
             Navigation.PushAsync(new CadastroDeEvento());
         }
 
-        private void ListaEventos_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void ListaEventos_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            //var evento = e.Item as Evento;
-           // DisplayAlert("Evento selecionado", evento.NomeEvento, "Ok");
+            var evento = e.Item as Evento;
+          
 
+            if(e.Item == null)
+            {
+                return;
+            }
+            var eventoTapped = (Evento)e.Item;
+            await Navigation.PushAsync(new InscricaoPage(e.Item));//passando o Evento como argumento para a pagina de incrição
+            await DisplayAlert("Evento", "Evento " + evento.NomeEvento.ToUpper() + " selecionado", "Ok");
+            
         }
     }
 }

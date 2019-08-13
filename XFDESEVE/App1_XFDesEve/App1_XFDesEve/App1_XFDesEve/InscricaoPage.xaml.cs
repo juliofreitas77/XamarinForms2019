@@ -15,8 +15,17 @@ namespace App1_XFDesEve
     {
         public InscricaoPage(Evento evento)
         {
+            this.BindingContext = evento;
+            
             InitializeComponent();
 
         }
+
+        private async void BtnInsc_Clicked(Object sender, EventArgs ars)
+        {
+
+            await Navigation.PushAsync(new ListaDeEventosAdmin());
+        }
+
     }
 }

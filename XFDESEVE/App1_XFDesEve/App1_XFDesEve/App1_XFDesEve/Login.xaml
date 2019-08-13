@@ -17,6 +17,7 @@
                              Spacing="2" 
                              VerticalOptions="CenterAndExpand" 
                              HorizontalOptions="FillAndExpand">
+                    
                     <Label Text="Matrícula" TextColor="#555" FontSize="18" FontAttributes="Bold"/>
                     <Entry  Keyboard="Numeric" Placeholder="Matrícula everis" PlaceholderColor="#CCC" 
                                 FontSize="20" TextColor="#555" x:Name="matriculaEntry" />

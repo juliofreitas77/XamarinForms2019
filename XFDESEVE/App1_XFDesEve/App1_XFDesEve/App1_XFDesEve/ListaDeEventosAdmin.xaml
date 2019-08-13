@@ -14,7 +14,7 @@
                           ItemsSource="{Binding ListaDeEventosAdmin}" 
                           CachingStrategy="RecycleElement" 
                           HasUnevenRows="True" Margin="25" 
-                          ItemSelected="ListaEventos_ItemTapped" 
+                          ItemSelected="ListaEventos_Selected" 
                           ItemTapped="ListaEventos_ItemTapped" >
                     <ListView.ItemTemplate>
                         <DataTemplate>

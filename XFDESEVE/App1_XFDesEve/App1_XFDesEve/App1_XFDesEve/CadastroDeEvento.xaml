@@ -15,22 +15,22 @@
                              HorizontalOptions="FillAndExpand">
                     
                     <Label Text="Evento" TextColor="#555" FontSize="18" FontAttributes="Bold"/>
-                    <Entry  Keyboard="Default" Placeholder="Nome do evento" PlaceholderColor="#CCC" FontSize="20" TextColor="#555" />
+                    <Entry  Keyboard="Default" Placeholder="Nome do evento" PlaceholderColor="#CCC" FontSize="20" TextColor="#555" x:Name="eventName" />
 
                     <Label Text="Local" TextColor="#555" FontSize="18" FontAttributes="Bold"/>
-                    <Entry  Keyboard="Default" Placeholder="Local do evento" PlaceholderColor="#CCC" FontSize="20" TextColor="#555" />
+                    <Entry  Keyboard="Default" Placeholder="Local do evento" PlaceholderColor="#CCC" FontSize="20" TextColor="#555"  x:Name="eventLocal"/>
 
                     <Label Text="Data" TextColor="#555" FontSize="18" FontAttributes="Bold"/>
-                    <Entry  Keyboard="Numeric" Placeholder="dd/mm/aaaa" PlaceholderColor="#CCC" FontSize="20" TextColor="#555" />
+                    <Entry  Keyboard="Numeric" Placeholder="dd/mm/aaaa" PlaceholderColor="#CCC" FontSize="20" TextColor="#555"  x:Name="eventData"/>
 
                     <Label Text="Horário" TextColor="#555" FontSize="18" FontAttributes="Bold"/>
-                    <Entry  Keyboard="Numeric" Placeholder="--:--" PlaceholderColor="#CCC" FontSize="20" TextColor="#555" />
+                    <Entry  Keyboard="Numeric" Placeholder="--:--" PlaceholderColor="#CCC" FontSize="20" TextColor="#555" x:Name="eventHorario"/>
                 </StackLayout>
             </StackLayout>
 
             <StackLayout Padding="30" VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Button x:Name="BtnCancel" Text="Cancelar" TextColor="White" BorderColor="#CB9600" BackgroundColor="#EE0A0A" Clicked="cancelarEvent"/>
-                <Button x:Name="BtnCadastrar" Text="Cadastrar" TextColor="White" BorderColor="#CB9600" BackgroundColor="#34DE0D"/>
+                <Button x:Name="BtnCadastrar" Text="Cadastrar" TextColor="White" Clicked="clicked_cadastrar" BorderColor="#CB9600" BackgroundColor="#34DE0D"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

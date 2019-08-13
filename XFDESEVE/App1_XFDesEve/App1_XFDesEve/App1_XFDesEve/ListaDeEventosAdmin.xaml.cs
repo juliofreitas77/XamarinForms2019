@@ -14,18 +14,39 @@ namespace App1_XFDesEve
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaDeEventosAdmin : ContentPage
     {
-        public ListaDeEventosAdmin()
-        {
+
+        public ListaDeEventosAdmin() {
             InitializeComponent();
 
             List<Evento> listaEventos = new List<Evento>();
-            listaEventos.Add(new Evento { NomeEvento = "Cobol Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture)});
+
+            listaEventos.Add(new Evento { NomeEvento = "Cobol Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             listaEventos.Add(new Evento { NomeEvento = "Material Design Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             listaEventos.Add(new Evento { NomeEvento = "Java for Beginners", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             listaEventos.Add(new Evento { NomeEvento = "Best Pratice DAy", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             listaEventos.Add(new Evento { NomeEvento = ".NET Core Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
 
             ListaEventos.ItemsSource = listaEventos;
+
+            this.BindingContext = this;
+        }
+        public  ListaDeEventosAdmin(Evento evento)
+        {
+            InitializeComponent();
+            
+            List<Evento> listaEventos = new List<Evento>();
+
+            listaEventos.Add(new Evento {NomeEvento= evento.NomeEvento, LocalEvento= evento.LocalEvento, DataEvento=evento.DataEvento });
+          
+            listaEventos.Add(new Evento { NomeEvento = "Cobol Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture)});
+            listaEventos.Add(new Evento { NomeEvento = "Material Design Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
+            listaEventos.Add(new Evento { NomeEvento = "Java for Beginners", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
+            listaEventos.Add(new Evento { NomeEvento = "Best Pratice DAy", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
+            listaEventos.Add(new Evento { NomeEvento = ".NET Core Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
+            
+            ListaEventos.ItemsSource = listaEventos;
+
+            this.BindingContext = this;
         }
 
         private void BtnNovoEvento(object sender, EventArgs args)
@@ -35,17 +56,19 @@ namespace App1_XFDesEve
 
         private async void ListaEventos_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var evento = e.Item as Evento;
-          
-
             if(e.Item == null)
             {
                 return;
             }
             var eventoTapped = (Evento)e.Item;
-            await Navigation.PushAsync(new InscricaoPage(e.Item));//passando o Evento como argumento para a pagina de incrição
-            await DisplayAlert("Evento", "Evento " + evento.NomeEvento.ToUpper() + " selecionado", "Ok");
+            await Navigation.PushAsync(new InscricaoPage(eventoTapped));//passando o Evento como argumento para a pagina de incrição
+         //   await DisplayAlert("Evento", "Evento " + evento.NomeEvento.ToUpper() + " selecionado", "Ok");
+        }
             
+        private async void ListaEventos_Selected(Object sender, SelectedItemChangedEventArgs e)
+        {
+            var eventoTapped = (Evento)e.SelectedItem;
+            await Navigation.PushAsync(new InscricaoPage(eventoTapped));
         }
     }
 }

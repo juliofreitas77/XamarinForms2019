@@ -4,9 +4,16 @@ using System.Text;
 
 namespace App1_XFDesEve.Modelo
 {
-    public class BaseDeEvento
+   
+    public  class BaseDeEvento
     {
-        public static List<Evento> listaEventos { get; }
+        static List<Evento> eventos; 
+
+        public List<Evento> AdicionaEventos(Evento evento)
+        {
+            eventos = new List<Evento>();
+            eventos.Add(evento);
+            return eventos;
+        }
     }
-    
 }

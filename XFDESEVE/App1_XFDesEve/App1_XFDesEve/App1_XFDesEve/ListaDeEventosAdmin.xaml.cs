@@ -14,37 +14,34 @@ namespace App1_XFDesEve
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaDeEventosAdmin : ContentPage
     {
+       // BaseDeEvento baseDeEvento = new BaseDeEvento();
+
+        static List<Evento> eventos = new List<Evento>();
 
         public ListaDeEventosAdmin() {
             InitializeComponent();
 
+            /*
             List<Evento> listaEventos = new List<Evento>();
-
+           
             listaEventos.Add(new Evento { NomeEvento = "Cobol Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             listaEventos.Add(new Evento { NomeEvento = "Material Design Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             listaEventos.Add(new Evento { NomeEvento = "Java for Beginners", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             listaEventos.Add(new Evento { NomeEvento = "Best Pratice DAy", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             listaEventos.Add(new Evento { NomeEvento = ".NET Core Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-
-            ListaEventos.ItemsSource = listaEventos;
+            **/
+//            ListaEventos.ItemsSource = listaEventos;
 
             this.BindingContext = this;
         }
         public  ListaDeEventosAdmin(Evento evento)
         {
             InitializeComponent();
-            
-            List<Evento> listaEventos = new List<Evento>();
 
-            listaEventos.Add(new Evento {NomeEvento= evento.NomeEvento, LocalEvento= evento.LocalEvento, DataEvento=evento.DataEvento });
-          
-            listaEventos.Add(new Evento { NomeEvento = "Cobol Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture)});
-            listaEventos.Add(new Evento { NomeEvento = "Material Design Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            listaEventos.Add(new Evento { NomeEvento = "Java for Beginners", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            listaEventos.Add(new Evento { NomeEvento = "Best Pratice DAy", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            listaEventos.Add(new Evento { NomeEvento = ".NET Core Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            
-            ListaEventos.ItemsSource = listaEventos;
+            eventos.Add(evento);
+
+
+            ListaEventos.ItemsSource = eventos;
 
             this.BindingContext = this;
         }

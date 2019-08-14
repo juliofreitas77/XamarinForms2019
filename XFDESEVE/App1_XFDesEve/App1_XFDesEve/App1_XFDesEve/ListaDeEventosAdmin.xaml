@@ -22,11 +22,10 @@
                                 <StackLayout Orientation="Vertical">
                                     <Label Text="{Binding NomeEvento}" FontSize="20" VerticalTextAlignment="Center"></Label>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding LocalEvento}" FontSize="12" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+                                        <Label Text="{Binding LocalEvento}" FontSize="12" FontAttributes="None" VerticalTextAlignment="Center"></Label>
                                         <Label Text=" - " VerticalTextAlignment="Center"></Label>
-                                        <Label Text="{Binding DataEvento}" FontSize="12" FontAttributes="None" VerticalTextAlignment="Center"></Label>
+                                        <Label Text="{Binding DataEvento, StringFormat='{0:dd/MM}'}" FontSize="12" FontAttributes="None" VerticalTextAlignment="Center"></Label>
                                     </StackLayout>
-                                    
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -37,6 +36,5 @@
                 <Button x:Name="BtnNovo" Text="Novo Evento" TextColor="White" BorderColor="#CB9600" BackgroundColor="#34DE0D" Clicked="BtnNovoEvento" />
             </StackLayout>
         </Grid>
-
     </ContentPage.Content>
 </ContentPage>

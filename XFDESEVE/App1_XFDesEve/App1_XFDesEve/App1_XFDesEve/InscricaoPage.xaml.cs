@@ -13,6 +13,7 @@ namespace App1_XFDesEve
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InscricaoPage : ContentPage
     {
+        bool OcultaBotao = false;
         public InscricaoPage(Evento evento)
         {
             this.BindingContext = evento;
@@ -23,7 +24,6 @@ namespace App1_XFDesEve
 
         private async void BtnInsc_Clicked(Object sender, EventArgs ars)
         {
-
             await Navigation.PushAsync(new ListaDeEventosAdmin());
         }
 

@@ -14,41 +14,43 @@ namespace App1_XFDesEve
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaDeEventosAdmin : ContentPage
     {
-       // BaseDeEvento baseDeEvento = new BaseDeEvento();
-
         static List<Evento> eventos = new List<Evento>();
 
-        public ListaDeEventosAdmin() {
-            InitializeComponent();
-
-            /*
-            List<Evento> listaEventos = new List<Evento>();
-           
-            listaEventos.Add(new Evento { NomeEvento = "Cobol Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            listaEventos.Add(new Evento { NomeEvento = "Material Design Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            listaEventos.Add(new Evento { NomeEvento = "Java for Beginners", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            listaEventos.Add(new Evento { NomeEvento = "Best Pratice DAy", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            listaEventos.Add(new Evento { NomeEvento = ".NET Core Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            **/
-//            ListaEventos.ItemsSource = listaEventos;
-
-            this.BindingContext = this;
-        }
-        public  ListaDeEventosAdmin(Evento evento)
+        bool admin = false;
+        public ListaDeEventosAdmin()
         {
             InitializeComponent();
+            this.BindingContext = this;
+        }
 
+        public ListaDeEventosAdmin(bool _admin)
+        {
+            this.admin = _admin;
+            InitializeComponent();
+            this.BindingContext = this;
+
+        }
+
+        public  ListaDeEventosAdmin(Evento evento, bool _admin)
+        {
+            InitializeComponent();
             eventos.Add(evento);
-
-
             ListaEventos.ItemsSource = eventos;
-
+            this.admin = _admin;
             this.BindingContext = this;
         }
 
-        private void BtnNovoEvento(object sender, EventArgs args)
+        public void BtnNovoEvento(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new CadastroDeEvento());
+            if( this.admin == true)
+            {
+                Navigation.PushAsync(new CadastroDeEvento());
+            }
+            else
+            {
+                DisplayAlert("Aviso", "Ação permitida apenas para usuários com perfil de administrador!", "Cancelar");
+            }
+            
         }
 
         private async void ListaEventos_ItemTapped(object sender, ItemTappedEventArgs e)

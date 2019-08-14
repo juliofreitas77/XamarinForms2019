@@ -16,19 +16,24 @@ namespace App1_XFDesEve
     public partial class CadastroDeEvento : ContentPage
     {
         Evento evento = new Evento();
-        
+        bool admin = true;
+
         public CadastroDeEvento()
         {
             this.BindingContext = this;
-         
             InitializeComponent();
+        }
 
-           
+        public CadastroDeEvento(bool _admin)
+        {
+            this.BindingContext = this;
+            InitializeComponent();
+            this.admin = _admin;
         }
 
         private  async void cancelarEvent(Object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListaDeEventosAdmin());
+            await Navigation.PushAsync(new ListaDeEventosAdmin(this.admin));
         }
 
         private async void clicked_cadastrar(object sender, EventArgs e)
@@ -42,7 +47,7 @@ namespace App1_XFDesEve
             evento.LocalEvento = local;
             evento.DataEvento = DateTime.ParseExact(data, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-            await Navigation.PushAsync(new ListaDeEventosAdmin(evento));
+            await Navigation.PushAsync(new ListaDeEventosAdmin(evento, this.admin));
 
         }
     }

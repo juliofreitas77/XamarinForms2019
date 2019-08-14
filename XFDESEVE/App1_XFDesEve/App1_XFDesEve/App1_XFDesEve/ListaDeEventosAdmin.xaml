@@ -32,7 +32,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-            <StackLayout Padding="30" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+            <StackLayout IsVisible="{Binding OcultarBotao}"  Padding="30" VerticalOptions="End" HorizontalOptions="FillAndExpand">
                 <Button x:Name="BtnNovo" Text="Novo Evento" TextColor="White" BorderColor="#CB9600" BackgroundColor="#34DE0D" Clicked="BtnNovoEvento" />
             </StackLayout>
         </Grid>

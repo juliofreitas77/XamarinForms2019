@@ -9,7 +9,7 @@ namespace App1_XFDesEve
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InscricaoPage : ContentPage
     {
-        public InscricaoPage(Evento evento)
+        public InscricaoPage(Evento evento, Boolean admin)
         {
             this.BindingContext = evento;
             InitializeComponent();
@@ -17,7 +17,7 @@ namespace App1_XFDesEve
 
         private async void BtnInsc_Clicked(Object sender, EventArgs ars)
         {
-            await Navigation.PushAsync(new ListaDeEventosAdmin());
+            await Navigation.PushAsync(new ListaDeEventosAdmin(true));
         }
     }
 }

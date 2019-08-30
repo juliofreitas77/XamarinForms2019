@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace App1_XFDesEve.Enums
+﻿namespace App1_XFDesEve.Enums
 {
     enum PerfilUser : int
     {

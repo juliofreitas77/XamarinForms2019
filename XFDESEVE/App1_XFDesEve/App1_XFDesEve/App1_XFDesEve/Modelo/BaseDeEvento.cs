@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace App1_XFDesEve.Modelo
 {
-   
-    public  class BaseDeEvento
+
+    public class BaseDeEvento
     {
-        static List<Evento> eventos; 
+        static List<Evento> eventos;
 
         public List<Evento> AdicionaEventos(Evento evento)
         {

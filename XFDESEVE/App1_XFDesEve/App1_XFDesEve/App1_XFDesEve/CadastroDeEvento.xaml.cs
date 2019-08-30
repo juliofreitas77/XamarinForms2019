@@ -1,14 +1,8 @@
-﻿using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using App1_XFDesEve.Modelo;
+using System;
 using System.Globalization;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using App1_XFDesEve.Modelo;
 
 namespace App1_XFDesEve
 {
@@ -31,13 +25,14 @@ namespace App1_XFDesEve
             this.admin = _admin;
         }
 
-        private  async void cancelarEvent(Object sender, EventArgs e)
+        private async void cancelarEvent(Object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ListaDeEventosAdmin(this.admin));
         }
 
         private async void clicked_cadastrar(object sender, EventArgs e)
         {
+
             string nome = eventName.Text.Trim();
             string local = eventLocal.Text.Trim();
             string data = eventData.Text.Trim();
@@ -47,8 +42,14 @@ namespace App1_XFDesEve
             evento.LocalEvento = local;
             evento.DataEvento = DateTime.ParseExact(data, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-            await Navigation.PushAsync(new ListaDeEventosAdmin(evento, this.admin));
-
+            if (evento.NomeEvento != null && evento.LocalEvento != null && evento.DataEvento != null)
+            {
+                await Navigation.PushAsync(new ListaDeEventosAdmin(evento, this.admin));
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

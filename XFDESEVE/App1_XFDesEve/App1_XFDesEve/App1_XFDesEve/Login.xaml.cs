@@ -1,8 +1,4 @@
-﻿using App1_XFDesEve.Modelo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -14,7 +10,7 @@ namespace App1_XFDesEve
     public partial class Login : ContentPage
     {
         public bool Admin { get; set; }
-        
+
         public Login()
         {
             InitializeComponent();
@@ -40,13 +36,13 @@ namespace App1_XFDesEve
              * senha: 123456
              */
 
-            if(Matricula == 1000 && Email== "admin@everis.com" && Senha == "123456")
+            if (Matricula == 1000 && Email == "admin@everis.com" && Senha == "123456")
             {
                 this.Admin = true;
                 await atraso(2000);
                 Application.Current.MainPage = new NavigationPage(new ListaDeEventosAdmin(this.Admin));
             }
-            else if (Matricula == 2000 && Email== "user@everis.com" && Senha =="everis")
+            else if (Matricula == 2000 && Email == "user@everis.com" && Senha == "everis")
             {
                 this.Admin = false;
                 await atraso(2000);

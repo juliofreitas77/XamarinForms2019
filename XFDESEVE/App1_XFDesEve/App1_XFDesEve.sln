@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App1_XFDesEve.UWP", "App1_XFDesEve\App1_XFDesEve.UWP\App1_XFDesEve.UWP.csproj", "{23119A73-B667-4958-BA3F-A2E0E87BCFFF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75B6857B-F947-4046-BCF1-47F5DB1C780A} = {75B6857B-F947-4046-BCF1-47F5DB1C780A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App1_XFDesEve.Android", "App1_XFDesEve\App1_XFDesEve.Android\App1_XFDesEve.Android.csproj", "{75B6857B-F947-4046-BCF1-47F5DB1C780A}"
 EndProject

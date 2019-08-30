@@ -21,7 +21,7 @@
                     <Entry  Keyboard="Default" Placeholder="Local do evento" PlaceholderColor="#CCC" FontSize="20" TextColor="#555"  x:Name="eventLocal"/>
 
                     <Label Text="Data" TextColor="#555" FontSize="18" FontAttributes="Bold"/>
-                    <Entry  Keyboard="Numeric" Placeholder="dd/mm/aaaa" PlaceholderColor="#CCC" FontSize="20" TextColor="#555"  x:Name="eventData"/>
+                    <Entry  Keyboard="Default" Placeholder="dd/mm/aaaa" PlaceholderColor="#CCC" FontSize="20" TextColor="#555"  x:Name="eventData"/>
 
                     <Label Text="Horário" TextColor="#555" FontSize="18" FontAttributes="Bold"/>
                     <Entry  Keyboard="Numeric" Placeholder="--:--" PlaceholderColor="#CCC" FontSize="20" TextColor="#555" x:Name="eventHorario"/>

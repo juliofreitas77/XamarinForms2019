@@ -12,17 +12,13 @@ namespace App1_XFDesEve
         Evento evento = new Evento();
         bool admin = true;
 
-        public CadastroDeEvento()
-        {
-            this.BindingContext = this;
-            InitializeComponent();
-        }
-
+       
         public CadastroDeEvento(bool _admin)
         {
-            this.BindingContext = this;
             InitializeComponent();
+            this.BindingContext = this;
             this.admin = _admin;
+           // BtnCadastrar.Clicked += clicked_cadastrar;
         }
 
         private async void cancelarEvent(Object sender, EventArgs e)
@@ -36,15 +32,15 @@ namespace App1_XFDesEve
             string nome = eventName.Text.Trim();
             string local = eventLocal.Text.Trim();
             string data = eventData.Text.Trim();
-            string hora = eventHorario.Text.Trim();
+          //  string hora = eventHorario.Text.Trim();
 
             evento.NomeEvento = nome;
             evento.LocalEvento = local;
             evento.DataEvento = DateTime.ParseExact(data, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-            if (evento.NomeEvento != null && evento.LocalEvento != null && evento.DataEvento != null)
+            if (nome != null && local != null && data != null)
             {
-                await Navigation.PushAsync(new ListaDeEventosAdmin(evento, this.admin));
+                await Navigation.PushAsync(new ListaDeEventosAdmin(this.evento, this.admin));
             }
             else
             {

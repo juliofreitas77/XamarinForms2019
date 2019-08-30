@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack"
              mc:Ignorable="d"
              x:Class="App1_XFDesEve.InscricaoPage" 
              Title="Inscrição">
@@ -34,12 +35,16 @@
                        FontSize="20" TextColor="#555"/>
 
                     <Label Text="E-mail" TextColor="#555" FontSize="20" FontAttributes="Bold"/>
-                    <Entry Keyboard="Email" Placeholder="Entre com seu email" PlaceholderColor="#CCC" 
-                       FontSize="20" TextColor="#555"/>
+                    <Entry Keyboard="Email" Placeholder="Entre com seu email" PlaceholderColor="#CCC" FontSize="20" TextColor="#555"/>
 
                     <Label Text="Telefone" TextColor="#555" FontSize="20" FontAttributes="Bold"/>
                     <Entry Keyboard="Numeric" Placeholder="Digite aqui o telefone" PlaceholderColor="#CCC" 
-                       FontSize="20" TextColor="#555"/>
+                       FontSize="20" TextColor="#555">
+                        <Entry.Behaviors>
+                            <behaviorPack:NumberValidationBehavior/>
+                            <behaviorPack:MaskedBehavior Mask="(XX)XXXXX-XXXX"/>
+                        </Entry.Behaviors>
+                    </Entry>
 
                     <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
                         <Label Text="Conhecimento sobre o tema? " FontSize="20" TextColor="#555" FontAttributes="Bold" VerticalOptions="Center"/>

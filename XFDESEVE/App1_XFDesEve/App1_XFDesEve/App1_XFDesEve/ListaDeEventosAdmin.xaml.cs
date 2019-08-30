@@ -13,26 +13,31 @@ namespace App1_XFDesEve
     {
         static List<Evento> eventos;
         bool admin = false;
-
+       
         public ListaDeEventosAdmin(bool _admin)
         {
             eventos = new List<Evento>();
-            this.admin = _admin;
             InitializeComponent();
             eventos.Add(new Evento { NomeEvento = "Cobol Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             eventos.Add(new Evento { NomeEvento = "Material Design Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             this.BindingContext = this;
+            this.admin = _admin;
             ListaEventos.ItemsSource = eventos;
         }
 
         public ListaDeEventosAdmin(Evento evento, bool _admin)
         {
             InitializeComponent();
-            eventos.Add(new Evento { NomeEvento = "Cobol Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
-            eventos.Add(new Evento { NomeEvento = "Material Design Day", LocalEvento = "Uberlândia", DataEvento = DateTime.Parse("01/01/2019", CultureInfo.InvariantCulture) });
             eventos.Add(evento);
             ListaEventos.ItemsSource = eventos;
             this.admin = _admin;
+            this.BindingContext = this;
+         }
+
+        public ListaDeEventosAdmin()
+        {
+            InitializeComponent();
+            ListaEventos.ItemsSource = eventos;
             this.BindingContext = this;
         }
 
@@ -40,7 +45,7 @@ namespace App1_XFDesEve
         {
             if (this.admin == true)
             {
-                Navigation.PushAsync(new CadastroDeEvento());
+                Navigation.PushAsync(new CadastroDeEvento(admin));
             }
             else
             {

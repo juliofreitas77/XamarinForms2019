@@ -39,7 +39,7 @@ namespace App1_XFDesEve
             if (Matricula == 1000 && Email == "admin@everis.com" && Senha == "123456")
             {
                 this.Admin = true;
-                await atraso(2000);
+                await atraso(1000);
                 Application.Current.MainPage = new NavigationPage(new ListaDeEventosAdmin(this.Admin));
             }
             else if (Matricula == 2000 && Email == "user@everis.com" && Senha == "everis")

@@ -44,17 +44,17 @@ namespace App1_XFDesEve.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7F050005
-			public const int colorAccent = 2131034117;
+			// aapt resource value: 0x7F010000
+			public const int colorAccent = 2130771968;
 			
-			// aapt resource value: 0x7F050003
-			public const int colorPrimary = 2131034115;
+			// aapt resource value: 0x7F010001
+			public const int colorPrimary = 2130771969;
 			
-			// aapt resource value: 0x7F050004
-			public const int colorPrimaryDark = 2131034116;
+			// aapt resource value: 0x7F010002
+			public const int colorPrimaryDark = 2130771970;
 			
-			// aapt resource value: 0x7F050002
-			public const int launcher_background = 2131034114;
+			// aapt resource value: 0x7F010003
+			public const int launcher_background = 2130771971;
 			
 			static Color()
 			{
@@ -69,8 +69,8 @@ namespace App1_XFDesEve.Droid
 		public partial class Drawable
 		{
 			
-			// aapt resource value: 0x7F010002
-			public const int everis_logo = 2130771970;
+			// aapt resource value: 0x7F020000
+			public const int everis_logo = 2130837504;
 			
 			static Drawable()
 			{
@@ -85,11 +85,11 @@ namespace App1_XFDesEve.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7F020002
-			public const int sliding_tabs = 2130837506;
+			// aapt resource value: 0x7F030000
+			public const int sliding_tabs = 2130903040;
 			
-			// aapt resource value: 0x7F020003
-			public const int toolbar = 2130837507;
+			// aapt resource value: 0x7F030001
+			public const int toolbar = 2130903041;
 			
 			static Id()
 			{
@@ -104,11 +104,11 @@ namespace App1_XFDesEve.Droid
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7F030002
-			public const int Tabbar = 2130903042;
+			// aapt resource value: 0x7F040000
+			public const int Tabbar = 2130968576;
 			
-			// aapt resource value: 0x7F030003
-			public const int Toolbar = 2130903043;
+			// aapt resource value: 0x7F040001
+			public const int Toolbar = 2130968577;
 			
 			static Layout()
 			{
@@ -123,14 +123,14 @@ namespace App1_XFDesEve.Droid
 		public partial class Mipmap
 		{
 			
-			// aapt resource value: 0x7F040002
-			public const int icon = 2130968578;
+			// aapt resource value: 0x7F050000
+			public const int icon = 2131034112;
 			
-			// aapt resource value: 0x7F040003
-			public const int icon_round = 2130968579;
+			// aapt resource value: 0x7F050001
+			public const int icon_round = 2131034113;
 			
-			// aapt resource value: 0x7F040004
-			public const int launcher_foreground = 2130968580;
+			// aapt resource value: 0x7F050002
+			public const int launcher_foreground = 2131034114;
 			
 			static Mipmap()
 			{
@@ -145,14 +145,14 @@ namespace App1_XFDesEve.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7F060004
-			public const int AppCompatDialogStyle = 2131099652;
+			// aapt resource value: 0x7F060000
+			public const int AppCompatDialogStyle = 2131099648;
+			
+			// aapt resource value: 0x7F060001
+			public const int MainTheme = 2131099649;
 			
 			// aapt resource value: 0x7F060002
-			public const int MainTheme = 2131099650;
-			
-			// aapt resource value: 0x7F060003
-			public const int MainTheme_Base = 2131099651;
+			public const int MainTheme_Base = 2131099650;
 			
 			static Style()
 			{
